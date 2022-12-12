@@ -6,6 +6,28 @@ import java.awt.geom.Point2D;
 /**
  * Created by Piec on 2019-12-22.
  */
+
+/*
+This code is a Java method that calculates a sequence of steps for a machine to perform a specific bending operation on a wire. The method takes an input object of type BendingSteps and returns an object of type Steps that represents the calculated steps for the machine.
+
+The method begins by creating a new Steps object called machineSteps that will be used to store the calculated steps. It then declares several local variables that will be used throughout the method to perform calculations and store intermediate values. These variables include:
+
+angleWithOverbend, which represents the angle of the bend with an added overbend.
+arcLength, which represents the length of the arc formed by the bend.
+wireDistance, which represents the distance the wire needs to be moved before being bent.
+wireRotationAngle, which represents the angle the wire needs to be rotated before being bent.
+wireBendAngle, which represents the angle at which the wire will be bent.
+lastExtension, which represents the extension of the wire from the previous bending step.
+currentExtension, which represents the extension of the wire for the current bending step.
+bendDirection, which represents the direction in which the wire will be bent (0 for clockwise, 1 for counterclockwise).
+currentStep, which is a SingleStep object that represents the current bending step being processed.
+currentMachineStep, which is a SingleMachineStep object that represents the current step calculated for the machine.
+The method then enters a loop that iterates over each SingleStep object in the input BendingSteps object. For each step, the method performs several calculations to determine the required distance, rotation, and bend angle for the machine to perform the step. These values are then used to create a new SingleMachineStep object, which is added to the machineSteps object.
+
+Finally, the method returns the machineSteps object that contains the calculated steps for the machine to perform the bending operation.
+*/
+
+
 public class MachineStepsCalculator {
 
     //private Steps<SingleStep> bendingSteps;
@@ -17,7 +39,6 @@ public class MachineStepsCalculator {
     private double minimumArcRadius;
 
     //private ArrayList<SingleStep> machineStepsList;
-
 
     public MachineStepsCalculator(MachineGeometry machineGeometry, WireParameters wireParameters) {
         //this.bendingSteps = bendingSteps;
